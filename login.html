@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/layui-v2.6.8/layui/css/layui.css">
+    <style>
+        body {
+            background: url(./assets/images/login_bg.jpg);
+        }
+        
+        form {
+            width: 400px;
+            height: 330px;
+            margin: 100px auto;
+            background-color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .m2 {
+            width: 1100px;
+            margin: auto;
+        }
+        
+        .layui-btn {
+            width: 160%;
+            background-color: #00a2ff;
+            margin-left: -68px;
+        }
+        
+        .layui-input-inline input {
+            width: 152%;
+        }
+        
+        .layui-card-body,
+        .layui-card-header,
+        .layui-form-label {
+            width: 44px;
+        }
+        
+        .top {
+            margin: 20px 0;
+        }
+        
+        .layui-form-item {
+            width: 310px;
+            text-align: center;
+        }
+        
+        .layui-input-block input {
+            margin-left: -36px;
+            width: 143%;
+        }
+        
+        .dl {
+            width: 42px;
+            margin-left: 318px;
+            font-size: 13px;
+        }
+        
+        #form1 {
+            display: none;
+        }
+        
+        #form2 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo m2">
+        <img src="./assets/images/logo.png" alt="">
+    </div>
+
+
+    <form class="layui-form" action="" id="form1">
+        <div class="top">
+            <img src="./assets/images/login_title.png" alt="">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-username" style="font-size: 25px; color: black;"></i>  </label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-password" style="font-size: 25px; color: black;"></i></label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-password" style="font-size: 25px; color: black;"></i></label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="required" placeholder="再次确认密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+            </div>
+        </div>
+        <div class="dl">
+            <a href="#">去登陆</a>
+        </div>
+
+    </form>
+
+    <form class="layui-form" action="" style="display: block;" id="form2">
+        <div class="top">
+            <img src="./assets/images/login_title.png" alt="">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-username" style="font-size: 25px; color: black;"></i>  </label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i class="layui-icon layui-icon-password" style="font-size: 25px; color: black;"></i></label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block " style="math-style: 20px;">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+            </div>
+        </div>
+        <div class="dll" style="width: 100px; margin-left: 276px;">
+            <a href="#">去注册账号</a>
+        </div>
+
+    </form>
+
+
+
+</body>
+
+</html>
+<script src="./assets/lib/jquery.js"></script>
+<script src="./assets/layui-v2.6.8/layui/layui.js"></script>
+<script>
+    $('.dll a').click(function() {
+        $('#form1').show()
+        $('#form2').hide()
+    })
+    $('.dl a').click(function() {
+        $('#form2').show()
+        $('#form1').hide()
+    })
+
+    //Demo
+    layui.use('form', function() {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data) {
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
