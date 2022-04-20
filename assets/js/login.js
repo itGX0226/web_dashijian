@@ -12,19 +12,9 @@ $(function() {
     })
 
 
-<<<<<<< HEAD
-    //正则
-    $('.layui-form').submit(function(e) {
-        let input = $('.layui-input').val()
-        let str = /\w{6,}/
-        if (str.test(input) === false) {
-            e.preventDefault()
-        }
-=======
     //从layui中获取form对象
     let form = layui.form
     let layer = layui.layer
->>>>>>> login
 
     //从form.verify自定义校验规则
     form.verify({
