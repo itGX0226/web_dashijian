@@ -15,8 +15,8 @@ $(function() {
     //正则
     $('.layui-form').submit(function(e) {
         let input = $('.layui-input').val()
-        let str = /\d{6,}/
-        if (input.length <= 0) {
+        let str = /\w{6,}/
+        if (str.test(input) === false) {
             e.preventDefault()
         }
 
