@@ -10,4 +10,15 @@ $(function() {
         $('.login-box').show()
         $('.reg-box').hide()
     })
+
+
+    //正则
+    $('.layui-form').submit(function(e) {
+        let input = $('.layui-input').val()
+        let str = /\d{6,}/
+        if (input.length <= 0) {
+            e.preventDefault()
+        }
+
+    })
 })
