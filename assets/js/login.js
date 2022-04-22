@@ -68,7 +68,7 @@ $(function() {
                     return layer.msg('登录失败')
                 }
                 layer.msg('登录成功')
-
+                console.log(res.token);
                 //将登录成功得到的token值传到本地存储里面去
                 localStorage.setItem('token', res.token)
                 location.href = '/index.html'
